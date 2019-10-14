@@ -1,0 +1,43 @@
+#include<stdio.h>
+int main()
+{
+
+int initial_state=1,len,current_state=1;
+char p,q,str[10];
+
+printf("Enter string : ");
+scanf("%s",&str);
+len=strlen(str);
+if(len==3){ /*here d length of string is checked*/
+{
+if(initial_state==1 && str[0]=='p'){ /*to accept first element p*/
+current_state=2;
+}
+else {
+printf("String is Rejected.");
+exit(0);}
+}
+{
+if(current_state==2 && str[1]=='q'){ /*to accept second element q*/
+current_state=3;
+}
+else {
+printf("String is Rejected.");
+exit(0);}
+}
+{
+if(current_state==3 && str[2]=='q'){ /*to accept third element q*/
+current_state=4;
+printf(" String is accepted");}
+else {
+printf("String is rejected.");
+exit(0);}
+}
+
+}
+else{
+printf("Enter correct string." ); /*if length & character of string is not correct*/
+exit(0);
+}
+return 0;
+}
